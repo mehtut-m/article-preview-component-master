@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+body {
+    background-color: #ECF2F8;
+    font-size: 13px;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    font-weight: 200;
+}
+.card-ctn {
+    display: flex;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    background: #FFF;
+    border-radius: 10px;
+    width: 327px;
+    overflow: hidden;
+}
+/*** Card Image Container ***/
+.image-section-ctn {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    width: inherit;
+}
+.card-hero-img {
+    position: relative;
+    top: -15px;
+    width: inherit;
+}
+/*** Middle Card Section ***/
+.card-footer {
+    position: relative;
+}
+.context-section-ctn {
+    padding: 2.5rem 2rem;
+}
+.article-title {
+    color: #48556A;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1em;
+}
+.article-context {
+    color: #6E8098;
+    line-height: 1.25rem;
+}
+/*** Footer Card Section ***/
+.publisher-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    align-self: center;
+    padding: 0 2rem;
+}
+.publisher-profile {
+    display: flex;
+    gap: 1rem;
+    max-height: 2.5rem;
+}
+.publisher-info :nth-child(2) {
+    color: #9DAEC2;
+}
+.publisher-image {
+    display: block;
+    width: 40px;
+    border-radius: 50%;
+}
+.share-btn {
+    background-image: url(./images/icon-share.svg);
+}
+.share-icon-ctn {
+    background: #ECF2F8;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    padding: 9px;
+    z-index: 100;
+}
+.share-icon-ctn-active {
+    background: #6E8098;
+}
+.share-section-icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+}
+
+/*** Share To Tooltips section ***/
+.share-to-ctn {
+    background: #48556A;
+    height: 59.5px;
+    position: absolute;
+    bottom: -100%;
+    transition: .7s ease-out;
+    width: 100%;
+}
+.share-to-ctn-active {
+    bottom: 0;
+}
+.share-to-list {                  
+    display: flex;
+    font-size: 1em;
+    height: inherit;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 1rem;
+}
+.share-to-list li {
+    cursor: pointer;
+    list-style: none;
+}
+.share {
+    color:#9DAEC2;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.share-icon-ctn:hover {
+    background: #6E8098;
+    transition: 0.5s;
+}
+.share-icon-ctn:hover > span {
+    background-image: url(./images/icon-share-active.svg);
+    transition: inherit;
+}
+.share-icon-ctn-active > span {
+    background-image: url(./images/icon-share-active.svg);
+    transition: inherit;
+}
+/*** Attribution Section ***/
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media (min-width: 768px) {
+    .card {
+        display: grid;
+        grid-template-columns: 285px 1fr;
+        grid-template-rows: 10.5rem 1fr;
+        overflow: visible;
+        height: 280px; 
+        width: 730px;           
+    }
+    .image-section-ctn {
+        grid-row: 1/-1;
+        height: inherit;
+        width: unset;
+    }
+    .card-hero-img {
+        top: 0;
+        width: 350px;
+    }
+    .context-section-ctn {
+        padding: 2rem 2.5rem 0;
+    }
+    .article-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    .card-footer {
+        display: grid;
+    }
+    .share {
+        cursor: text;
+    }
+    .share-to-ctn {
+        opacity: 0;
+        visibility: hidden;
+        border-radius: 10px;
+        height: 55px;
+        width: 248px;
+        top: -50px;
+        right: -50%;
+        transform: translateX(-60%);
+        z-index: 12;
+        /* transition: none; */
+        overflow-x: visible;
+    }
+    .share-to-ctn-active {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.5s;
+    }
+}
